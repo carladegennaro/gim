@@ -26,6 +26,10 @@ Corso di Grafica in movimento 2025, SUPSI
 
 ## Esercizio 1C
 
+Trovo interessante che Kleist scelga le marionette per rappresentare l’ideale di grazia e spontaneità, proprio perché sono gli uomini a muoverle. Secondo me anche chi le anima perde una certa spontaneità nello spettacolo, pur sapendo di non poter eguagliare la loro prestazione. È affascinante come la consapevolezza impedisca all’uomo di essere davvero spontaneo ed è un peccato trovo, perché siamo noi stessi a imporci delle regole.
+
+*(Sintassi rifatta da Chatgpt)*
+
 
 
 ## Esercizio 2
