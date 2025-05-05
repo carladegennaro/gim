@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="author" content="Nome Cognome" />
+	<title>img</title>
+	<style type="text/css">
+		html{
+			height:100%;
+		}
+		body{
+			background-color: rgb(235,235,235);
+			margin: 3em 2em;
+		}
+	</style>
+
+</head>
+<body>
+
+	<img />
+
+	<script type="module">
+
+		const sequenza = [
+			"img/logo-01.png",
+			"img/logo-02.png",
+			"img/logo-03.png",
+			"img/logo-04.png",
+			"img/logo-05.png",
+			"img/logo-06.png",
+			"img/logo-07.png",
+			"img/logo-08.png",
+			"img/logo-09.png",
+			"img/logo-10.png",
+			"img/logo-11.png",
+			"img/logo-12.png",
+			"img/logo-13.png",
+			"img/logo-14.png",
+			"img/logo-15.png",
+			"img/logo-16.png",
+			"img/logo-17.png",
+			"img/logo-18.png",
+			"img/logo-19.png",
+			"img/logo-20.png",
+			"img/logo-21.png",
+			"img/logo-22.png",
+			"img/logo-23.png",
+			"img/logo-24.png",
+			"img/logo-25.png",
+			"img/logo-26.png",
+			"img/logo-27.png",
+			"img/logo-28.png",
+			"img/logo-29.png",
+			"img/logo-30.png",
+			"img/logo-31.png",
+			"img/logo-32.png",
+			"img/logo-33.png",
+			"img/logo-34.png",
+			"img/logo-35.png",
+			"img/logo-36.png",
+			"img/logo-37.png",
+			"img/logo-38.png",
+			"img/logo-39.png",
+			"img/logo-40.png",
+			"img/logo-41.png",
+			"img/logo-42.png",
+			"img/logo-43.png",
+			"img/logo-44.png",
+			"img/logo-45.png",
+			"img/logo-46.png",
+			"img/logo-47.png",
+			"img/logo-48.png",
+			"img/logo-49.png",
+			"img/logo-50.png",
+			"img/logo-51.png",
+			"img/logo-52.png",
+			"img/logo-53.png",
+			"img/logo-54.png",
+			"img/logo-55.png",
+			"img/logo-56.png",
+			"img/logo-57.png",
+			"img/logo-58.png",
+			"img/logo-59.png",
+			"img/logo-60.png",
+			"img/logo-61.png",
+			"img/logo-62.png",
+			"img/logo-63.png",
+			"img/logo-64.png",
+			"img/logo-65.png",
+			"img/logo-66.png",
+			"img/logo-67.png",
+			"img/logo-68.png",
+			"img/logo-69.png",
+			"img/logo-70.png",
+			"img/logo-71.png",
+			"img/logo-72.png",
+			"img/logo-73.png",
+			"img/logo-74.png",
+			"img/logo-75.png", 
+			"img/logo-76.png",
+			
+		
+		]
+
+		let frame = 0
+
+		setInterval(() => {
+			const img = document.querySelector("img")
+			img.src = sequenza[frame]
+			frame = (frame + 1) % sequenza.length
+		}, 20)
+
+	</script>
+</body>
+</html>
