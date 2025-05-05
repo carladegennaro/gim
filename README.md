@@ -30,4 +30,7 @@ Corso di Grafica in movimento 2025, SUPSI
 
 ## Esercizio 2
 
-- [Esercizio 2: parallassi](https://carladegennaro.github.io/gim/esercizio_2/parallassi_interattiva.html)
+- [Esercizio 2: parallassi animata](https://carladegennaro.github.io/gim/esercizio_2/parallassi_animata.html)
+
+- [Esercizio 2: parallassi interattiva](https://carladegennaro.github.io/gim/esercizio_2/parallassi_interattiva.html)
+
