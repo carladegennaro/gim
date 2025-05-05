@@ -22,5 +22,12 @@ Corso di Grafica in movimento 2025, SUPSI
 
 ## Esercizio 1B
 
-- [Esercizio 1B: logo animato](esercizio1A/spostamento_3.html)
+- [Esercizio 1B: logo animato](esercizio1B/logo_animato.html)
 
+## Esercizio 1C
+
+
+
+## Esercizio 2
+
+- [Esercizio 2: parallassi](esercizio2/index.html)
