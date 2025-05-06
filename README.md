@@ -41,4 +41,4 @@ Trovo interessante che Kleist scelga le marionette per rappresentare l’ideale 
 
 ## Esercizio 3A
 
-- [Esercizio 3A: pong interattivo](https://carladegennaro.github.io/gim/esercizio_3A/index.html)
+- [Esercizio 3A: pong interattivo](https://carladegennaro.github.io/gim/esercizio_3A/pong_interattivo.html)
