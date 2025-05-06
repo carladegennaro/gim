@@ -38,3 +38,8 @@ Trovo interessante che Kleist scelga le marionette per rappresentare l’ideale 
 
 - [Esercizio 2: parallassi interattiva](https://carladegennaro.github.io/gim/esercizio_2/parallassi_interattiva.html)
 
+
+**##Esercizio 3A**
+
+- [Esercizio 3A: Pong interattivo](https://carladegennaro.github.io/gim/esercizio_2/parallassi_interattiva.html)
+
