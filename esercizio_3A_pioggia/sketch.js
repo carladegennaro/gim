@@ -33,30 +33,9 @@ function draw() {
 		line(gx, gy, gz, gx, gy+gl, gz)	//=line(100, 50, 100, 150)
 		}
 	
-	
-	
-	let audioPlayer;
 
-	function setup() {
-		  
-		  noCanvas();
-		
-			audioPlayer = createAudio('/assets/piano-loop.mp3');
-		
-		  
-		  audioPlayer.attribute(
-			'aria-description',
-			'The playback speed of this audio player is controlled by the position of the mouse. The further to the right the mouse is, the faster the audio will play.'
-		  );
-		
-		  audioPlayer.showControls();
-		}
-		
-		function draw() {
-		  
-		  audioPlayer.speed(1 + mouseX / windowWidth);
-		}
 
+	
 
 
 }
