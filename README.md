@@ -45,7 +45,7 @@ Trovo interessante che Kleist scelga le marionette per rappresentare l’ideale 
 
 - [Esercizio 3A: pioggia](https://github.com/carladegennaro/gim/esercizio_3A_pioggia/index.html)
 
-- [Esercizio 3A: neve](https://github.com/carladegennaro/gim/)
+- [Esercizio 3A: neve]
 
 
 
