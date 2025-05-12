@@ -1,60 +1,139 @@
-//creare una variabile: let
-let posX, posY
+let paddleLeftX = 20;
+let paddleLeftY = 200;
 
-let velX, velY
-//lascia che posizione x sia 170 (variabile)
-//al centro posso fare width/2 ma solo dopo che il canvas sia creato
+let paddleRightX = 380;
+let paddleRightY = 200;
 
+let paddleSpeed = 2;
+let paddleHeight = 80;
+let paddleWidth = 10;
+
+let leftScore = 0;
+let rightScore = 0;
+
+let ballPosX = 200;
+let ballPosY = 200;
+let ballSpeedX = 0;
+let ballSpeedY = 0;
+let ballSize = 10;
+
+let ballColor;
+
+let trailLayer;
 
 function setup() {
-	createCanvas(500, 500)
-	posX = 200
-	velX=7
-	
-	posY =100
-	velY=7
+  createCanvas(400, 400);
+  rectMode(CENTER);
+  fill(255);
+  noStroke();
+  textSize(40);
+  textAlign(CENTER);
+  noLoop();
+
+  ballColor = color(random(255), random(255), random(255));
+  trailLayer = createGraphics(width, height); // Crea un layer per la scia
+  trailLayer.noStroke();
 }
 
-function draw() { //questa funzione è un ciclo
+function draw() {
+  background(0); // Sfondo nero
 
-	console.log(posX) // questo serve per poter aumentare molto la velocità
-	posX = posX + velX //+1=velocità posso aumentare o diminuire
-	posY = posY + velY //+1=velocità posso aumentare o diminuire
-	
-	if(posX >= 500){
-		velX=-velX
-	} else if(posX< 0){
-		velX=-velX
-	}
+  // Disegna la scia della pallina
+  trailLayer.fill(ballColor);
+  trailLayer.ellipse(ballPosX, ballPosY, ballSize);
 
-	if(posY >= 500){
-		velY=-velY
-	} else if(posY< 0){
-		velY=-velY
-	}
+  // Mostra il layer con la scia sopra lo sfondo
+  image(trailLayer, 0, 0);
 
-	background(0) // se tolgo sfondo si crea la scia
-	noStroke()
-	
-	ellipse(posX, posY, 25)
-	
-	//se mouse è cliccato, cambia colore : condizione
-	// bisogna selezionare cosa è sotto la condizione
-	if(mouseIsPressed){
-		//fill(mouseX,mouseY,250-mouseY)
-		fill(random(255,), random(255), random(255))
-		// posso mettere come ultimo mouseX o mouseY cosi da cambiare le dimensioni
-	}
-	
+  // Disegna le racchette (senza scia, bianche)
+  fill(255);
+  rect(paddleLeftX, paddleLeftY, paddleWidth, paddleHeight);
+  rect(paddleRightX, paddleRightY, paddleWidth, paddleHeight);
+
+  // Disegna il punteggio
+  text(leftScore, width * 0.25, height * 0.1);
+  text(rightScore, width * 0.75, height * 0.1);
+
+  // Muove la pallina
+  ballPosX += ballSpeedX;
+  ballPosY += ballSpeedY;
+
+  // Gestisce la collisione con la racchetta sinistra
+  let leftCollisionLeft = paddleLeftX - paddleWidth / 2 - ballSize / 2;
+  let leftCollisionRight = paddleLeftX + paddleWidth / 2 + ballSize / 2;
+  let leftCollisionTop = paddleLeftY - paddleHeight / 2 - ballSize / 2;
+  let leftCollisionBottom = paddleLeftY + paddleHeight / 2 + ballSize / 2;
+
+  if (
+    ballPosX >= leftCollisionLeft &&
+    ballPosX <= leftCollisionRight &&
+    ballPosY >= leftCollisionTop &&
+    ballPosY <= leftCollisionBottom
+  ) {
+    ballSpeedX = -ballSpeedX; // Rimbalza la pallina
+    ballSpeedY = (ballPosY - paddleLeftY) / 20; // Cambia velocità verticale
+  }
+
+  // Gestisce la collisione con la racchetta destra
+  let rightCollisionLeft = paddleRightX - paddleWidth / 2 - ballSize / 2;
+  let rightCollisionRight = paddleRightX + paddleWidth / 2 + ballSize / 2;
+  let rightCollisionTop = paddleRightY - paddleHeight / 2 - ballSize / 2;
+  let rightCollisionBottom = paddleRightY + paddleHeight / 2 + ballSize / 2;
+
+  if (
+    ballPosX >= rightCollisionLeft &&
+    ballPosX <= rightCollisionRight &&
+    ballPosY >= rightCollisionTop &&
+    ballPosY <= rightCollisionBottom
+  ) {
+    ballSpeedX = -ballSpeedX; // Rimbalza la pallina
+    ballSpeedY = (ballPosY - paddleRightY) / 20; // Cambia velocità verticale
+  }
+
+  // Gestisce il punteggio e reset della pallina
+  if (ballPosX < 0) {
+    rightScore += 1;
+    resetBall();
+  } else if (ballPosX > width) {
+    leftScore += 1;
+    resetBall();
+  } else if (ballPosY < 0 || ballPosY > height) {
+    ballSpeedY = -ballSpeedY; // Rimbalza verticalmente
+  }
+
+  // Movimento della racchetta sinistra
+  let leftDownPressed = keyIsDown(83);
+  let leftUpPressed = keyIsDown(87);
+  let leftMove = 0;
+
+  if (leftDownPressed) leftMove += paddleSpeed;
+  if (leftUpPressed) leftMove -= paddleSpeed;
+
+  paddleLeftY = constrain(paddleLeftY + leftMove, paddleHeight / 2, height - paddleHeight / 2);
+
+  // Movimento della racchetta destra
+  let rightDownPressed = keyIsDown(DOWN_ARROW);
+  let rightUpPressed = keyIsDown(UP_ARROW);
+  let rightMove = 0;
+
+  if (rightDownPressed) rightMove += paddleSpeed;
+  if (rightUpPressed) rightMove -= paddleSpeed;
+
+  paddleRightY = constrain(paddleRightY + rightMove, paddleHeight / 2, height - paddleHeight / 2);
 }
 
-function keyPressed(){
-
-	if(key=='s') {
-		//se premo s salvo
-		save("immagine.png")
-	}
+// Reset della pallina con velocità casuale
+function resetBall() {
+  ballPosX = width / 2;
+  ballPosY = height / 2;
+  ballSpeedX = random([-3, 3]);
+  ballSpeedY = random([-1, 1]);
+  ballColor = color(random(255), random(255), random(255)); // Cambia colore
 }
 
-
-
+function mousePressed() {
+  if (!isLooping()) {
+    resetBall();
+    loop();
+  }
+}
