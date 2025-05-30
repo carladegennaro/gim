@@ -51,7 +51,7 @@ Trovo interessante che Kleist scelga le marionette per rappresentare l’ideale 
 
 ## Esercizio 3B
 
-- [Esercizio 3B: orologio](https://carladegennaro.github.io/gim/esercizio_3_orologio/orologio.html)
+- [Esercizio 3B: orologio](https://carladegennaro.github.io/gim/esercizio_3B_orologio/orologio.html)
 
 
 
